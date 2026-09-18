@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Золотистый ретривер</title>
+  <desc id="desc">Декоративная иллюстрация собаки</desc>
+  <rect width="800" height="600" rx="40" fill="#ead9c4"/>
+  <circle cx="620" cy="115" r="92" fill="#b86135" opacity=".35"/>
+  <circle cx="120" cy="500" r="130" fill="#b86135" opacity=".22"/>
+  <g transform="translate(400 310)">
+    <ellipse cx="0" cy="110" rx="145" ry="120" fill="#d3a26a"/>
+    <ellipse cx="0" cy="-20" rx="126" ry="118" fill="#d3a26a"/>
+    <ellipse cx="-108" cy="-45" rx="58" ry="92" fill="#d3a26a" transform="rotate(-24 -108 -45)"/>
+    <ellipse cx="108" cy="-45" rx="58" ry="92" fill="#d3a26a" transform="rotate(24 108 -45)"/>
+    <ellipse cx="-40" cy="-35" rx="13" ry="18" fill="#2d2925"/>
+    <ellipse cx="40" cy="-35" rx="13" ry="18" fill="#2d2925"/>
+    <ellipse cx="0" cy="10" rx="18" ry="14" fill="#2d2925"/>
+    <path d="M-25 38 Q0 60 25 38" fill="none" stroke="#2d2925" stroke-width="8" stroke-linecap="round"/>
+    <path d="M-86 100 Q0 155 86 100" fill="#f6ddb9" opacity=".75"/>
+    <path d="M0 132 q-30 55 -75 18" fill="none" stroke="#2d2925" stroke-width="7" stroke-linecap="round"/>
+    <path d="M0 132 q30 55 75 18" fill="none" stroke="#2d2925" stroke-width="7" stroke-linecap="round"/>
+  </g>
+</svg>
