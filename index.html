@@ -3,183 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sunny Paws — семейный питомник золотистых ретриверов. Щенки, родители, уход и консультации.">
-  <title>Sunny Paws — питомник золотистых ретриверов</title>
+  <meta name="description" content="Sunny Paws — питомник японских шпицев. Щенки, собаки питомника, помёты и контакты.">
+  <title>Sunny Paws — питомник японских шпицев</title>
   <link rel="icon" href="images/paw.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html" aria-label="Sunny Paws — на главную">
-        <img src="images/paw.svg" alt="" width="34" height="34">
-        <span>Sunny Paws</span>
-      </a>
 
-      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
-        <a class="active" href="index.html" aria-current="page">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contacts.html">Контакты</a>
-      </nav>
+<header class="site-header">
+  <div class="site-wrap header-top">
+    <a class="site-name" href="index.html">
+      <img src="images/paw.svg" alt="" width="48" height="48">
+      <span>
+        <strong>Sunny Paws</strong>
+        <small>питомник японских шпицев</small>
+      </span>
+    </a>
+    <p class="header-contact">Тел.: +7 (999) 123-45-67<br><span>Ежедневно с 10:00 до 19:00</span></p>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Меню</button>
+  </div>
+  <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+    <div class="site-wrap nav-inner">
+      <a class="active" href="index.html" aria-current="page">Главная</a><a href="about.html">О питомнике</a><a href="dogs.html">Наши собаки</a><a href="puppies.html">Щенки</a><a href="contacts.html">Контакты</a>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Семейный питомник золотистых ретриверов</p>
-          <h1>Собаки, которые становятся частью семьи</h1>
-          <p class="hero-text">
-            Мы выращиваем здоровых, социализированных щенков с устойчивой психикой,
-            уделяя внимание уходу, раннему развитию и будущим владельцам.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#puppies">Посмотреть щенков</a>
-            <a class="button button-secondary" href="contacts.html">Связаться с нами</a>
-          </div>
-          <ul class="hero-facts" aria-label="Кратко о питомнике">
-            <li><strong>8+</strong><span>лет опыта</span></li>
-            <li><strong>50+</strong><span>семей с нашими собаками</span></li>
-            <li><strong>24/7</strong><span>поддержка владельцев</span></li>
-          </ul>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <img src="images/hero-dog.svg" alt="">
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="puppies">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Наши питомцы</p>
-            <h2>Знакомьтесь с будущими любимцами</h2>
-          </div>
-        </div>
-
-        <div class="dog-grid">
-          <article class="dog-card">
-            <img src="images/dog-luna.svg" alt="Золотистый ретривер по кличке Луна">
-            <div class="dog-card-body">
-              <div class="dog-card-top">
-                <h3>Луна</h3>
-                <span class="badge">девочка</span>
-              </div>
-              <p>Спокойная, контактная и очень любопытная. Любит людей и быстро учится.</p>
-              <dl class="dog-meta">
-                <div><dt>Возраст</dt><dd>3 месяца</dd></div>
-                <div><dt>Статус</dt><dd>свободна</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="dog-card">
-            <img src="images/dog-charlie.svg" alt="Золотистый ретривер по кличке Чарли">
-            <div class="dog-card-body">
-              <div class="dog-card-top">
-                <h3>Чарли</h3>
-                <span class="badge">мальчик</span>
-              </div>
-              <p>Активный и дружелюбный щенок. Обожает игры и всегда первым идёт знакомиться.</p>
-              <dl class="dog-meta">
-                <div><dt>Возраст</dt><dd>3 месяца</dd></div>
-                <div><dt>Статус</dt><dd>резерв</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="dog-card">
-            <img src="images/dog-molly.svg" alt="Золотистый ретривер по кличке Молли">
-            <div class="dog-card-body">
-              <div class="dog-card-top">
-                <h3>Молли</h3>
-                <span class="badge">девочка</span>
-              </div>
-              <p>Нежная, внимательная и уравновешенная. Хорошо ладит с детьми и другими собаками.</p>
-              <dl class="dog-meta">
-                <div><dt>Возраст</dt><dd>4 месяца</dd></div>
-                <div><dt>Статус</dt><dd>свободна</dd></div>
-              </dl>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container benefits-grid">
-        <div class="section-heading compact">
-          <div>
-            <p class="eyebrow">Почему мы</p>
-            <h2>Ответственное разведение без лишней суеты</h2>
-          </div>
-        </div>
-
-        <div class="benefits">
-          <article class="benefit">
-            <span class="benefit-number">01</span>
-            <div>
-              <h3>Здоровье</h3>
-              <p>Плановые осмотры, вакцинация по возрасту и ветеринарное сопровождение.</p>
-            </div>
-          </article>
-          <article class="benefit">
-            <span class="benefit-number">02</span>
-            <div>
-              <h3>Социализация</h3>
-              <p>Щенки растут рядом с людьми, знакомятся с бытовыми звуками, играми и прогулками.</p>
-            </div>
-          </article>
-          <article class="benefit">
-            <span class="benefit-number">03</span>
-            <div>
-              <h3>Поддержка</h3>
-              <p>После переезда остаёмся на связи и помогаем с адаптацией, кормлением и воспитанием.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container cta">
-        <div>
-          <p class="eyebrow">Есть вопросы?</p>
-          <h2>Поможем подобрать щенка под ваш образ жизни</h2>
-          <p>Расскажите немного о себе — мы ответим и подскажем, на что обратить внимание.</p>
-        </div>
-        <a class="button button-light" href="contacts.html">Написать нам</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <a class="logo footer-logo" href="index.html">
-          <img src="images/paw.svg" alt="" width="30" height="30">
-          <span>Sunny Paws</span>
-        </a>
-        <p>Учебный проект сайта собачьего питомника.</p>
-      </div>
-      <nav class="footer-nav" aria-label="Навигация в подвале">
-        <a href="index.html">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contacts.html">Контакты</a>
-      </nav>
-      <p class="copyright">© <span data-current-year></span> Sunny Paws</p>
+  </nav>
+</header>
+<main class="site-wrap content">
+  <section class="welcome">
+    <div class="welcome-text">
+      <p class="crumb">Добро пожаловать!</p>
+      <h1>Питомник японских шпицев Sunny Paws</h1>
+      <p>Мы занимаемся японскими шпицами и уделяем внимание здоровью производителей, характеру и ранней социализации щенков.</p>
+      <p>На сайте можно познакомиться с собаками питомника, посмотреть актуальные помёты и связаться с нами по поводу свободных щенков.</p>
+      <p class="plain-links"><a href="dogs.html">Наши собаки</a> · <a href="puppies.html">Все щенки</a> · <a href="contacts.html">Связаться с нами</a></p>
     </div>
-  </footer>
+    <div class="welcome-photo">
+      <img src="images/dog-grace.png" alt="Японский шпиц">
+    </div>
+  </section>
+
+  <div class="two-columns">
+    <div class="main-column">
+      <section class="block">
+        <div class="title-row">
+          <h2 class="block-title">Свободные щенки</h2>
+          <a class="more-link" href="puppies.html">Все щенки →</a>
+        </div>
+        <p class="intro">На главной странице каждый раз показываются три случайных щенка из тех, кто сейчас свободен.</p>
+        <div class="featured-puppies" id="featured-puppies">
+          <p class="loading-note">Загрузка списка щенков...</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 class="block-title">О породе</h2>
+        <p>Японский шпиц — небольшая белая собака-компаньон с живым характером. Представители породы хорошо ориентированы на человека, любят общение и обычно легко включаются в обучение.</p>
+        <p>На странице <a href="dogs.html">«Наши собаки»</a> можно посмотреть производителей и родословные, а на странице <a href="puppies.html">«Щенки»</a> — актуальные помёты и статус каждого щенка.</p>
+      </section>
+
+      <section class="block">
+        <h2 class="block-title">Ближайший планируемый помёт</h2>
+        <div class="planned-small">
+          <p><strong>Ноябрь 2026</strong></p>
+          <p>Archie × Alma</p>
+          <p>Предварительная запись открыта.</p>
+          <a href="puppies.html#planned">Подробнее о планируемых помётах</a>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sidebar">
+      <section class="side-box">
+        <h2>Новости питомника</h2>
+        <article class="news-item">
+          <time datetime="2026-09-15">15.09.2026</time>
+          <p>Обновлены фотографии и статусы щенков текущего помёта.</p>
+        </article>
+        <article class="news-item">
+          <time datetime="2026-09-02">02.09.2026</time>
+          <p>Открыта предварительная запись на осенний помёт.</p>
+        </article>
+      </section>
+
+      <section class="side-box">
+        <h2>Разделы сайта</h2>
+        <ul class="link-list">
+          <li><a href="dogs.html">Кобели и суки питомника</a></li>
+          <li><a href="dogs.html#pedigree">Родословные</a></li>
+          <li><a href="puppies.html">Свободные щенки</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-wrap footer-inner">
+    <p>© <span data-current-year></span> Sunny Paws</p>
+    <p><a href="contacts.html">Контакты</a> · +7 (999) 123-45-67</p>
+  </div>
+</footer>
+
 </body>
 </html>

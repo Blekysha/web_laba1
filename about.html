@@ -3,139 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="О питомнике Sunny Paws: подход к разведению, уходу и социализации золотистых ретриверов.">
-  <title>О нас — Sunny Paws</title>
+  <meta name="description" content="О питомнике Sunny Paws и японских шпицах.">
+  <title>О питомнике — Sunny Paws</title>
   <link rel="icon" href="images/paw.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html" aria-label="Sunny Paws — на главную">
-        <img src="images/paw.svg" alt="" width="34" height="34">
-        <span>Sunny Paws</span>
-      </a>
 
-      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
-        <a href="index.html">Главная</a>
-        <a class="active" href="about.html" aria-current="page">О нас</a>
-        <a href="contacts.html">Контакты</a>
-      </nav>
+<header class="site-header">
+  <div class="site-wrap header-top">
+    <a class="site-name" href="index.html">
+      <img src="images/paw.svg" alt="" width="48" height="48">
+      <span>
+        <strong>Sunny Paws</strong>
+        <small>питомник японских шпицев</small>
+      </span>
+    </a>
+    <p class="header-contact">Тел.: +7 (999) 123-45-67<br><span>Ежедневно с 10:00 до 19:00</span></p>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Меню</button>
+  </div>
+  <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+    <div class="site-wrap nav-inner">
+      <a href="index.html">Главная</a><a class="active" href="about.html" aria-current="page">О питомнике</a><a href="dogs.html">Наши собаки</a><a href="puppies.html">Щенки</a><a href="contacts.html">Контакты</a>
     </div>
-  </header>
+  </nav>
+</header>
+<main class="site-wrap content">
+  <div class="page-heading">
+    <p class="crumb"><a href="index.html">Главная</a> → О питомнике</p>
+    <h1>О питомнике</h1>
+  </div>
 
-  <main>
-    <section class="page-hero">
-      <div class="container page-hero-grid">
-        <div>
-          <p class="eyebrow">О питомнике</p>
-          <h1>Мы выращиваем собак рядом с людьми, а не просто «готовим к продаже»</h1>
-          <p>
-            Sunny Paws — учебный образ семейного питомника, где в центре внимания
-            здоровье собаки, характер и ответственное устройство щенка в новую семью.
-          </p>
-        </div>
-        <img src="images/about-dog.svg" alt="Иллюстрация золотистого ретривера">
-      </div>
-    </section>
+  <div class="two-columns">
+    <div class="main-column">
+      <section class="block">
+        <h2 class="block-title">Немного о нас</h2>
+        <img class="article-photo" src="images/dog-alma.png" alt="Японский шпиц">
+        <p>Питомник Sunny Paws занимается разведением японских шпицев. Основное внимание уделяется здоровью производителей, условиям содержания и ранней социализации щенков.</p>
+        <p>Мы предпочитаем небольшое количество помётов, чтобы можно было уделять достаточно времени каждой собаке. Щенки растут рядом с людьми и с первых недель привыкают к обычной домашней среде.</p>
+      </section>
 
-    <section class="section">
-      <div class="container story-grid">
-        <div>
-          <p class="eyebrow">Наша история</p>
-          <h2>От одной любимой собаки к собственному питомнику</h2>
-        </div>
-        <div class="story-copy">
-          <p>
-            Всё началось с интереса к золотистым ретриверам и желания глубже понять
-            особенности породы. Постепенно увлечение выросло в системную работу с
-            ветеринарами, кинологами и владельцами собак.
-          </p>
-          <p>
-            Мы придерживаемся спокойного подхода: не гонимся за количеством помётов,
-            следим за условиями содержания и уделяем внимание каждому щенку.
-          </p>
-        </div>
-      </div>
-    </section>
+      <section class="block">
+        <h2 class="block-title">Как растут щенки</h2>
+        <ul class="normal-list">
+          <li>осмотр и вакцинация по возрасту;</li>
+          <li>постепенное знакомство с людьми и окружающей средой;</li>
+          <li>игры и простые развивающие занятия;</li>
+          <li>первые навыки спокойного поведения;</li>
+          <li>рекомендации владельцу по адаптации щенка дома.</li>
+        </ul>
+      </section>
 
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Наши принципы</p>
-            <h2>Что для нас действительно важно</h2>
-          </div>
-        </div>
-
-        <div class="principles-grid">
-          <article class="principle-card">
-            <span>01</span>
-            <h3>Осознанное разведение</h3>
-            <p>Продумываем пары, учитываем происхождение, здоровье и особенности характера собак.</p>
-          </article>
-          <article class="principle-card">
-            <span>02</span>
-            <h3>Ранняя социализация</h3>
-            <p>Щенки знакомятся с людьми, звуками дома, играми и безопасным исследованием окружающего мира.</p>
-          </article>
-          <article class="principle-card">
-            <span>03</span>
-            <h3>Открытость</h3>
-            <p>Рассказываем будущим владельцам об особенностях породы и не скрываем возможные сложности.</p>
-          </article>
-          <article class="principle-card">
-            <span>04</span>
-            <h3>Связь после переезда</h3>
-            <p>Не исчезаем после передачи щенка: остаёмся на связи и отвечаем на вопросы владельцев.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container routine-grid">
-        <img src="images/care-dog.svg" alt="Собака на прогулке">
-        <div>
-          <p class="eyebrow">Как растут щенки</p>
-          <h2>Уход, игры и знакомство с миром</h2>
-          <ul class="check-list">
-            <li>Регулярный осмотр и уход по возрасту</li>
-            <li>Контакт с людьми и спокойная домашняя среда</li>
-            <li>Игры, развивающие любопытство и уверенность</li>
-            <li>Постепенное знакомство с поводком и базовыми правилами</li>
-            <li>Рекомендации новым владельцам перед переездом щенка</li>
-          </ul>
-          <a class="button button-primary" href="contacts.html">Задать вопрос</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <a class="logo footer-logo" href="index.html">
-          <img src="images/paw.svg" alt="" width="30" height="30">
-          <span>Sunny Paws</span>
-        </a>
-        <p>Учебный проект сайта собачьего питомника.</p>
-      </div>
-      <nav class="footer-nav" aria-label="Навигация в подвале">
-        <a href="index.html">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contacts.html">Контакты</a>
-      </nav>
-      <p class="copyright">© <span data-current-year></span> Sunny Paws</p>
+      <section class="block">
+        <h2 class="block-title">Особенности породы</h2>
+        <p>Японские шпицы известны белой густой шерстью, аккуратной внешностью и внимательным характером. Они любят быть рядом с человеком, нуждаются в регулярных прогулках и обычном уходе за шерстью.</p>
+      </section>
     </div>
-  </footer>
+
+    <aside class="sidebar">
+      <section class="side-box">
+        <h2>Коротко</h2>
+        <dl class="facts">
+          <div><dt>Порода</dt><dd>японский шпиц</dd></div>
+          <div><dt>Основан</dt><dd>2018 год</dd></div>
+          <div><dt>Формат</dt><dd>семейный питомник</dd></div>
+        </dl>
+      </section>
+      <section class="side-box guest-pet-box">
+        <h2>Гость питомника</h2>
+        <img src="images/guest-cat.png" alt="Кошка — гость питомника">
+        <p>Иногда заезжает с инспекцией и проверяет, достаточно ли мягкие лежанки.</p>
+      </section>
+
+      <section class="side-box">
+        <h2>Смотрите также</h2>
+        <ul class="link-list">
+          <li><a href="dogs.html">Наши собаки</a></li>
+          <li><a href="puppies.html">Щенки</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-wrap footer-inner">
+    <p>© <span data-current-year></span> Sunny Paws</p>
+    <p><a href="contacts.html">Контакты</a> · +7 (999) 123-45-67</p>
+  </div>
+</footer>
+
 </body>
 </html>

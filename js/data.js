@@ -1,0 +1,131 @@
+const puppies = [
+  {
+    id: "luna",
+    name: "Луна",
+    fullName: "Sunny Paws Luna",
+    sex: "Девочка",
+    born: "12.06.2026",
+    age: "3 месяца",
+    color: "белый",
+    status: "available",
+    statusText: "Свободна",
+    image: "images/puppy-luna.png",
+    father: "Archie",
+    mother: "Grace",
+    description: "Спокойная, контактная и быстро привыкает к новому месту."
+  },
+  {
+    id: "molly",
+    name: "Молли",
+    fullName: "Sunny Paws Molly",
+    sex: "Девочка",
+    born: "03.05.2026",
+    age: "4 месяца",
+    color: "белый",
+    status: "available",
+    statusText: "Свободна",
+    image: "images/puppy-molly.png",
+    father: "Baron",
+    mother: "Alma",
+    description: "Ласковая, уравновешенная и внимательная к человеку."
+  },
+  {
+    id: "bella",
+    name: "Белла",
+    fullName: "Sunny Paws Bella",
+    sex: "Девочка",
+    born: "22.06.2026",
+    age: "3 месяца",
+    color: "белый",
+    status: "available",
+    statusText: "Свободна",
+    image: "images/puppy-bella.png",
+    father: "Archie",
+    mother: "Grace",
+    description: "Любознательная, аккуратная и спокойно ведёт себя дома."
+  },
+  {
+    id: "max",
+    name: "Макс",
+    fullName: "Sunny Paws Max",
+    sex: "Мальчик",
+    born: "22.06.2026",
+    age: "3 месяца",
+    color: "белый",
+    status: "available",
+    statusText: "Свободен",
+    image: "images/puppy-max.png",
+    father: "Archie",
+    mother: "Grace",
+    description: "Смелый и активный щенок, любит игру и хорошо идёт на контакт."
+  },
+  {
+    id: "nora",
+    name: "Нора",
+    fullName: "Sunny Paws Nora",
+    sex: "Девочка",
+    born: "03.05.2026",
+    age: "4 месяца",
+    color: "белый",
+    status: "available",
+    statusText: "Свободна",
+    image: "images/puppy-nora.png",
+    father: "Baron",
+    mother: "Alma",
+    description: "Спокойная, наблюдательная и очень аккуратная в поведении."
+  },
+  {
+    id: "charlie",
+    name: "Чарли",
+    fullName: "Sunny Paws Charlie",
+    sex: "Мальчик",
+    born: "12.06.2026",
+    age: "3 месяца",
+    color: "белый",
+    status: "reserved",
+    statusText: "Зарезервирован",
+    image: "images/puppy-teddy.png",
+    father: "Archie",
+    mother: "Grace",
+    description: "Весёлый и дружелюбный щенок, уже выбран будущей семьёй."
+  },
+  {
+    id: "teddy",
+    name: "Тедди",
+    fullName: "Sunny Paws Teddy",
+    sex: "Мальчик",
+    born: "03.05.2026",
+    age: "4 месяца",
+    color: "белый",
+    status: "reserved",
+    statusText: "Зарезервирован",
+    image: "images/puppy-teddy-2.jpg",
+    father: "Baron",
+    mother: "Alma",
+    description: "Подвижный и общительный, сейчас находится в резерве."
+  },
+  {
+    id: "archie-jr",
+    name: "Арчи-младший",
+    fullName: "Sunny Paws Archie Junior",
+    sex: "Мальчик",
+    born: "18.02.2026",
+    age: "7 месяцев",
+    color: "белый",
+    status: "family",
+    statusText: "Нашёл семью",
+    image: "images/puppy-archie-jr.jpg",
+    father: "Baron",
+    mother: "Grace",
+    description: "Уже уехал в новую семью и хорошо адаптировался."
+  }
+];
+
+const plannedLitters = [
+  {
+    period: "Ноябрь 2026",
+    father: "Archie",
+    mother: "Alma",
+    note: "Планируемый помёт. Предварительная запись открыта."
+  }
+];

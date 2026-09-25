@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-labelledby="t d">
+<title id="t">Archie</title>
+<desc id="d">Фотография собаки питомника — временное изображение</desc>
+<rect width="900" height="650" fill="#e8dbc7"/>
+<rect x="35" y="35" width="830" height="580" fill="#f6efe4" stroke="#bba88d" stroke-width="4"/>
+<ellipse cx="450" cy="430" rx="200" ry="115" fill="#c7955c"/>
+<circle cx="450" cy="280" r="150" fill="#c7955c"/>
+<ellipse cx="325" cy="280" rx="70" ry="120" fill="#9b6c43" transform="rotate(-18 325 280)"/>
+<ellipse cx="575" cy="280" rx="70" ry="120" fill="#9b6c43" transform="rotate(18 575 280)"/>
+<circle cx="405" cy="260" r="14" fill="#2f2924"/>
+<circle cx="495" cy="260" r="14" fill="#2f2924"/>
+<ellipse cx="450" cy="315" rx="25" ry="18" fill="#2f2924"/>
+<path d="M420 345 Q450 370 480 345" fill="none" stroke="#2f2924" stroke-width="9" stroke-linecap="round"/>
+<path d="M310 480 Q450 545 590 480" fill="#efd9bd" opacity=".7"/>
+<text x="450" y="585" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#6c5138">Archie</text>
+</svg>

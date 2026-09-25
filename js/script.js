@@ -1,145 +1,162 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menuButton = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".main-nav");
-
-  const closeMenu = () => {
-    if (!menuButton || !navigation) return;
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Открыть меню");
-    navigation.classList.remove("is-open");
-    document.body.classList.remove("menu-open");
-  };
+document.addEventListener("DOMContentLoaded", function () {
+  var menuButton = document.querySelector(".menu-toggle");
+  var navigation = document.querySelector(".main-nav");
 
   if (menuButton && navigation) {
-    menuButton.addEventListener("click", () => {
-      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-      menuButton.setAttribute("aria-expanded", String(!isOpen));
-      menuButton.setAttribute("aria-label", isOpen ? "Открыть меню" : "Закрыть меню");
-      navigation.classList.toggle("is-open", !isOpen);
-      document.body.classList.toggle("menu-open", !isOpen);
-    });
-
-    navigation.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeMenu();
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 720) closeMenu();
+    menuButton.addEventListener("click", function () {
+      var opened = navigation.classList.toggle("is-open");
+      menuButton.setAttribute("aria-expanded", String(opened));
+      menuButton.textContent = opened ? "Закрыть" : "Меню";
     });
   }
 
-  document.querySelectorAll("[data-current-year]").forEach((element) => {
-    element.textContent = new Date().getFullYear();
+  document.querySelectorAll("[data-current-year]").forEach(function (el) {
+    el.textContent = new Date().getFullYear();
   });
 
-  const form = document.querySelector("#contact-form");
+  function puppyCard(puppy) {
+    var statusClass = "status-" + puppy.status;
+    return `
+      <article class="puppy-card">
+        <img src="${puppy.image}" alt="Щенок по кличке ${puppy.name}">
+        <div class="puppy-info">
+          <h3>${puppy.name}</h3>
+          <p class="puppy-full-name">${puppy.fullName}</p>
+          <span class="status ${statusClass}">${puppy.statusText}</span>
+          <p>${puppy.description}</p>
+          <table>
+            <tr><th>Пол</th><td>${puppy.sex}</td></tr>
+            <tr><th>Дата рождения</th><td>${puppy.born}</td></tr>
+            <tr><th>Окрас</th><td>${puppy.color}</td></tr>
+            <tr><th>Отец</th><td><a href="dogs.html#${puppy.father.toLowerCase()}">${puppy.father}</a></td></tr>
+            <tr><th>Мать</th><td><a href="dogs.html#${puppy.mother.toLowerCase()}">${puppy.mother}</a></td></tr>
+          </table>
+        </div>
+      </article>`;
+  }
+
+  function renderList(containerId, status) {
+    var container = document.getElementById(containerId);
+    if (!container || typeof puppies === "undefined") return;
+
+    var list = puppies.filter(function (p) { return p.status === status; });
+
+    if (!list.length) {
+      container.innerHTML = '<p class="empty-note">Сейчас в этом разделе нет щенков.</p>';
+      return;
+    }
+
+    container.innerHTML = list.map(puppyCard).join("");
+  }
+
+  var featured = document.getElementById("featured-puppies");
+  if (featured && typeof puppies !== "undefined") {
+    var available = puppies.filter(function (p) { return p.status === "available"; });
+
+    if (!available.length) {
+      featured.innerHTML = '<p class="empty-note">В настоящий момент свободных щенков нет. Информация о новых помётах появится позже.</p>';
+    } else {
+      available = available.slice().sort(function () { return Math.random() - 0.5; });
+      featured.innerHTML = available.slice(0, 3).map(puppyCard).join("");
+    }
+  }
+
+  renderList("available-puppies", "available");
+  renderList("reserved-puppies", "reserved");
+  renderList("family-puppies", "family");
+
+  var planned = document.getElementById("planned-litters");
+  if (planned && typeof plannedLitters !== "undefined") {
+    planned.innerHTML = plannedLitters.map(function (item) {
+      return `
+        <article class="planned-item">
+          <strong>${item.period}</strong>
+          <div>
+            <p><b>Родители:</b> <a href="dogs.html#${item.father.toLowerCase()}">${item.father}</a> × <a href="dogs.html#${item.mother.toLowerCase()}">${item.mother}</a></p>
+            <p>${item.note}</p>
+          </div>
+        </article>`;
+    }).join("");
+  }
+
+  var form = document.getElementById("contact-form");
   if (!form) return;
 
-  const fields = {
-    name: document.querySelector("#name"),
-    email: document.querySelector("#email"),
-    phone: document.querySelector("#phone"),
-    message: document.querySelector("#message"),
-    agreement: document.querySelector("#agreement")
-  };
+  var nameInput = document.getElementById("name");
+  var emailInput = document.getElementById("email");
+  var phoneInput = document.getElementById("phone");
+  var messageInput = document.getElementById("message");
+  var agreementInput = document.getElementById("agreement");
+  var statusBox = document.getElementById("form-status");
 
-  const status = document.querySelector("#form-status");
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  const phonePattern = /^[+()\-\s\d]{7,20}$/;
-
-  const setError = (fieldName, message) => {
-    const field = fields[fieldName];
-    const error = document.querySelector(`#${fieldName}-error`);
-
-    if (field && field.type !== "checkbox") {
-      field.classList.toggle("is-invalid", Boolean(message));
-      field.setAttribute("aria-invalid", String(Boolean(message)));
-
-      if (message) {
-        field.setAttribute("aria-describedby", `${fieldName}-error`);
-      } else {
-        field.removeAttribute("aria-describedby");
-      }
-    }
-
+  function showError(field, message) {
+    var error = document.getElementById(field.id + "-error");
     if (error) error.textContent = message;
-  };
+    if (field.type !== "checkbox") field.classList.toggle("is-invalid", Boolean(message));
+  }
 
-  const validateName = () => {
-    const value = fields.name.value.trim();
-    if (!value) {
-      setError("name", "Введите имя.");
-      return false;
-    }
+  function validateName() {
+    var value = nameInput.value.trim();
     if (value.length < 2) {
-      setError("name", "Имя должно содержать минимум 2 символа.");
+      showError(nameInput, "Введите имя (не менее 2 символов).");
       return false;
     }
-    setError("name", "");
+    showError(nameInput, "");
     return true;
-  };
+  }
 
-  const validateEmail = () => {
-    const value = fields.email.value.trim();
-    if (!value) {
-      setError("email", "Введите e-mail.");
+  function validateEmail() {
+    var value = emailInput.value.trim();
+    var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!pattern.test(value)) {
+      showError(emailInput, "Укажите корректный e-mail.");
       return false;
     }
-    if (!emailPattern.test(value)) {
-      setError("email", "Введите e-mail в формате name@example.com.");
-      return false;
-    }
-    setError("email", "");
+    showError(emailInput, "");
     return true;
-  };
+  }
 
-  const validatePhone = () => {
-    const value = fields.phone.value.trim();
-    if (value && !phonePattern.test(value)) {
-      setError("phone", "Проверьте формат номера телефона.");
+  function validatePhone() {
+    var value = phoneInput.value.trim();
+    var pattern = /^[+()\-\s\d]{7,20}$/;
+    if (value !== "" && !pattern.test(value)) {
+      showError(phoneInput, "Проверьте номер телефона.");
       return false;
     }
-    setError("phone", "");
+    showError(phoneInput, "");
     return true;
-  };
+  }
 
-  const validateMessage = () => {
-    const value = fields.message.value.trim();
-    if (!value) {
-      setError("message", "Напишите сообщение.");
-      return false;
-    }
+  function validateMessage() {
+    var value = messageInput.value.trim();
     if (value.length < 10) {
-      setError("message", "Сообщение должно содержать минимум 10 символов.");
+      showError(messageInput, "Сообщение должно быть не короче 10 символов.");
       return false;
     }
-    setError("message", "");
+    showError(messageInput, "");
     return true;
-  };
+  }
 
-  const validateAgreement = () => {
-    if (!fields.agreement.checked) {
-      setError("agreement", "Подтвердите согласие.");
+  function validateAgreement() {
+    var error = document.getElementById("agreement-error");
+    if (!agreementInput.checked) {
+      error.textContent = "Необходимо подтвердить согласие.";
       return false;
     }
-    setError("agreement", "");
+    error.textContent = "";
     return true;
-  };
+  }
 
-  fields.name.addEventListener("blur", validateName);
-  fields.email.addEventListener("blur", validateEmail);
-  fields.phone.addEventListener("blur", validatePhone);
-  fields.message.addEventListener("blur", validateMessage);
-  fields.agreement.addEventListener("change", validateAgreement);
+  nameInput.addEventListener("blur", validateName);
+  emailInput.addEventListener("blur", validateEmail);
+  phoneInput.addEventListener("blur", validatePhone);
+  messageInput.addEventListener("blur", validateMessage);
+  agreementInput.addEventListener("change", validateAgreement);
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const isValid = [
+    var valid = [
       validateName(),
       validateEmail(),
       validatePhone(),
@@ -147,21 +164,16 @@ document.addEventListener("DOMContentLoaded", () => {
       validateAgreement()
     ].every(Boolean);
 
-    status.className = "form-status";
+    statusBox.className = "form-status";
 
-    if (!isValid) {
-      status.textContent = "Проверьте поля формы и исправьте ошибки.";
-      status.classList.add("error");
-
-      const firstInvalid = form.querySelector(".is-invalid");
-      if (firstInvalid) firstInvalid.focus();
+    if (!valid) {
+      statusBox.textContent = "Проверьте поля формы.";
+      statusBox.classList.add("error");
       return;
     }
 
-    status.textContent = "Форма заполнена корректно. В учебной версии данные никуда не отправляются.";
-    status.classList.add("success");
+    statusBox.textContent = "Сообщение заполнено корректно.";
+    statusBox.classList.add("success");
     form.reset();
-
-    Object.keys(fields).forEach((fieldName) => setError(fieldName, ""));
   });
 });
